@@ -30,3 +30,7 @@ end
 Given(/^there is a project called "(.*?)"$/) do |arg1|
   FactoryGirl.create(:project, name: arg1)
 end
+
+Then(/^I should not see "(.*?)"$/) do |arg1|
+  page.should_not have_content(arg1)
+end
