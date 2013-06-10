@@ -17,3 +17,11 @@ end
 Then(/^I should see "(.*?)"$/) do |arg1|
   has_text?(arg1)
 end
+
+Then(/^I should be on the project page for "(.*?)"$/) do |arg1|
+  current_path.should == project_path(Project.find_by_name(arg1))
+end
+
+Then(/^the title should be "(.*?)"$/) do |arg1|
+	page.should have_title(arg1)
+end
