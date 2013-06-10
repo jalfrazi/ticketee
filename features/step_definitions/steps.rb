@@ -15,7 +15,8 @@ When(/^I press "(.*?)"$/) do |arg1|
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|
-  has_text?(arg1)
+  #page.has_text?(:visible, arg1)
+  page.should have_content(arg1)
 end
 
 Then(/^I should be on the project page for "(.*?)"$/) do |arg1|
@@ -23,5 +24,5 @@ Then(/^I should be on the project page for "(.*?)"$/) do |arg1|
 end
 
 Then(/^the title should be "(.*?)"$/) do |arg1|
-	page.should have_title(arg1)
+	page.has_title?(arg1)
 end
